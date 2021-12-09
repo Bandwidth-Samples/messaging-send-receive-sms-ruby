@@ -40,7 +40,7 @@ For more information about API credentials see our [Account Credentials](https:/
 
 # Running the Application
 
-Use the following commands to run the application:
+Use the following command to run the application:
 
 ```sh
 ruby app.rb
