@@ -1,5 +1,5 @@
 # Send and Receive SMS
-<a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
+<a href="http://dev.bandwidth.com/docs/messaging/quickStart"><img src="./icon-messaging.svg"/></a>
 </div>
 
  # Table of Contents
@@ -16,7 +16,7 @@
 <!-- /TOC -->
 
 # Description
-Using a tool capable of making POST requests (Postman), send a POST request to the app's endpoint `/callbacks/outbound/messaging` with a json body like:
+Using a tool capable of making POST requests (Postman), send a POST request to the app's endpoint `/sendMessage` with a json body like:
 ```json
 {
   "to": "+19199994444",
@@ -29,13 +29,14 @@ If you text your Bandwidth number you will see your text printed out to the logs
 The other two endpoints are used for handling inbound and outbound webhooks from Bandwidth. In order to use the correct endpoints, you must check the "Use multiple callback URLs" box on the application page in Dashboard. Then in Dashboard, set the INBOUND CALLBACK to `/callbacks/inbound/messaging` and the STATUS CALLBACK to `/callbacks/outbound/messaging/status`. The same can be accomplished via the Dashboard API by setting InboundCallbackUrl and OutboundCallbackUrl respectively.
 
 Inbound callbacks are sent notifying you of a received message on a Bandwidth number, this app prints the phone numbers invloved, as well as the text received. Outbound callbacks are status updates for messages sent from a Bandwidth number, this app has a dedicated response for each type of status update.
+
 # Bandwidth
 
 In order to use the Bandwidth API users need to set up the appropriate application at the [Bandwidth Dashboard](https://dashboard.bandwidth.com/) and create API tokens.
 
 To create an application log into the [Bandwidth Dashboard](https://dashboard.bandwidth.com/) and navigate to the `Applications` tab.  Fill out the **New Application** form selecting the service (Messaging or Voice) that the application will be used for.  All Bandwidth services require publicly accessible Callback URLs, for more information on how to set one up see [Callback URLs](#callback-urls).
 
-For more information about API credentials see [here](https://dev.bandwidth.com/guides/accountCredentials.html#top)
+For more information about API credentials see [here](https://dev.bandwidth.com/docs/account/credentials)
 
 # Environmental Variables
 The sample app uses the below environmental variables.
@@ -50,10 +51,9 @@ LOCAL_PORT                           # The port number you wish to run the sampl
 
 # Callback URLs
 
-For a detailed introduction to Bandwidth Callbacks see https://dev.bandwidth.com/guides/callbacks/callbacks.html
+For a detailed introduction to Bandwidth Messaging Callbacks see https://dev.bandwidth.com/docs/messaging/webhooks
 
 Below are the callback paths:
-* `/callbacks/outbound/messaging` For Sending Text Messages
 * `/callbacks/outbound/messaging/status` For Outbound Status Callbacks
 * `/callbacks/inbound/messaging` For Inbound Message Callbacks
 
