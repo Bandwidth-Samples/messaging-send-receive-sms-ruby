@@ -1,12 +1,10 @@
 # Send and Receive SMS
-<a href="http://dev.bandwidth.com/docs/messaging/quickStart"><img src="./icon-messaging.svg"/></a>
-</div>
+<a href="http://dev.bandwidth.com/docs/messaging/quickStart"><img src="./icon-messaging.svg" width="80%"/></a>
 
  # Table of Contents
 
 <!-- TOC -->
 
-- [Send and Receive SMS](#send-and-receive-sms)
 - [Description](#description)
 - [Bandwidth](#bandwidth)
 - [Environmental Variables](#environmental-variables)
@@ -36,7 +34,7 @@ In order to use the Bandwidth API users need to set up the appropriate applicati
 
 To create an application log into the [Bandwidth Dashboard](https://dashboard.bandwidth.com/) and navigate to the `Applications` tab.  Fill out the **New Application** form selecting the service (Messaging or Voice) that the application will be used for.  All Bandwidth services require publicly accessible Callback URLs, for more information on how to set one up see [Callback URLs](#callback-urls).
 
-For more information about API credentials see [here](https://dev.bandwidth.com/docs/account/credentials)
+For more information about API credentials see our [Account Credentials](https://dev.bandwidth.com/docs/account/credentials) page.
 
 # Environmental Variables
 The sample app uses the below environmental variables.
@@ -51,7 +49,7 @@ LOCAL_PORT                           # The port number you wish to run the sampl
 
 # Callback URLs
 
-For a detailed introduction to Bandwidth Messaging Callbacks see https://dev.bandwidth.com/docs/messaging/webhooks
+For a detailed introduction, check out our [Bandwidth Messaging Callbacks](https://dev.bandwidth.com/docs/messaging/webhooks) page.
 
 Below are the callback paths:
 * `/callbacks/outbound/messaging/status` For Outbound Status Callbacks
