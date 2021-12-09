@@ -1,6 +1,6 @@
 # Send and Receive SMS
 <a href="http://dev.bandwidth.com/docs/messaging/quickStart">
-  <img src="./icon-messaging.svg" title="Messaging Quick Start Guide" alt="Messaging Quick Start Guide" width="80%" style="margin: auto; display: block;"/>
+  <img src="./icon-messaging.svg" title="Messaging Quick Start Guide" alt="Messaging Quick Start Guide" width="50%" style="margin: auto; display: block;"/>
 </a>
 
  # Table of Contents
