@@ -49,6 +49,7 @@ ruby app.rb
 # Environmental Variables
 
 The sample app uses the below environmental variables.
+
 ```sh
 BW_NUMBER                            # The Bandwidth phone number involved with this application
 LOCAL_PORT                           # The port number you wish to run the sample on
