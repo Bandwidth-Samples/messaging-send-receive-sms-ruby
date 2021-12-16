@@ -36,9 +36,9 @@ post '/callbacks/outbound/messaging/status' do  # This URL handles outbound mess
     data = JSON.parse(request.body.read)
     case data[0]["type"] 
         when "message-sending"
-            puts "message-sending type is only for MMS"
+            puts "message-sending type is only for MMS."
         when "message-delivered"
-            puts "your message has been handed off to the Bandwidth's MMSC network, but has not been confirmed at the downstream carrier."
+            puts "Your message has been handed off to the Bandwidth's MMSC network, but has not been confirmed at the downstream carrier."
         when "message-failed"
             puts "For MMS and Group Messages, you will only receive this callback if you have enabled delivery receipts on MMS."
         else
@@ -49,8 +49,8 @@ end
 
 post '/callbacks/inbound/messaging' do  # This URL handles inbound message callbacks.
     data = JSON.parse(request.body.read)
+    puts data[0]["description"]
     if data[0]["type"] == "message-received"
-        puts "Message received"
         puts "To: " + data[0]["message"]["to"][0] + "\nFrom: " + data[0]["message"]["from"] + "\nText: " + data[0]["message"]["text"]
     else
         puts "Message type does not match endpoint. This endpoint is used for inbound messages only.\nOutbound message status callbacks should be sent to /callbacks/outbound/messaging/status."
