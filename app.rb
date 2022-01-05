@@ -48,10 +48,11 @@ post '/callbacks/outbound/messaging/status' do  # This URL handles outbound mess
 end
 
 post '/callbacks/inbound/messaging' do  # This URL handles inbound message callbacks.
-    data = JSON.parse(request.body.read)
-    puts data[0]["description"]
-    if data[0]["type"] == "message-received"
-        puts "To: " + data[0]["message"]["to"][0] + "\nFrom: " + data[0]["message"]["from"] + "\nText: " + data[0]["message"]["text"]
+    data = JSON.parse(request.body.read,:symbolize_names => true)
+    inbound_body = BandwidthCallbackMessage.new.build_from_hash(data[0])
+    puts inbound_body.description
+    if inbound_body.type == "message-received"
+        puts "To: " + inbound_body.message.to[0] + "\nFrom: " + inbound_body.message.from + "\nText: " + inbound_body.message.text
     else
         puts "Message type does not match endpoint. This endpoint is used for inbound messages only.\nOutbound message status callbacks should be sent to /callbacks/outbound/messaging/status."
     end
