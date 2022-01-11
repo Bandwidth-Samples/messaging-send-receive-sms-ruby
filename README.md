@@ -51,12 +51,12 @@ ruby app.rb
 The sample app uses the below environmental variables.
 
 ```sh
-BW_NUMBER                            # The Bandwidth phone number involved with this application
-LOCAL_PORT                           # The port number you wish to run the sample on
+BW_ACCOUNT_ID                        # Your Bandwidth Account Id
 BW_USERNAME                          # Your Bandwidth API Username
 BW_PASSWORD                          # Your Bandwidth API Password
-BW_ACCOUNT_ID                        # Your Bandwidth Account Id
+BW_NUMBER                            # The Bandwidth phone number involved with this application
 BW_MESSAGING_APPLICATION_ID          # Your Messaging Application Id created in the dashboard
+LOCAL_PORT                           # The port number you wish to run the sample on
 ```
 
 # Callback URLs

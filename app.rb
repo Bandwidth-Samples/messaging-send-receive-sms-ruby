@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'openapi_ruby_sdk' # replace with new gem name************
+require 'openapi_ruby_sdk_new' # replace with new gem name************
 
 include RubySdk # replace with new module name**************
 
@@ -19,7 +19,7 @@ end
 
 $api_instance_msg = RubySdk::MessagesApi.new()  # replace with new module name************
 
-post '/sendMessage' do  # Make a POST request to this URL to send a text message
+post '/sendMessage' do  # Make a POST request to this URL to send a text message.
     data = JSON.parse(request.body.read)
     body = MessageRequest.new
     body.application_id = BW_MESSAGING_APPLICATION_ID
@@ -48,7 +48,7 @@ post '/callbacks/outbound/messaging/status' do  # This URL handles outbound mess
 end
 
 post '/callbacks/inbound/messaging' do  # This URL handles inbound message callbacks.
-    data = JSON.parse(request.body.read,:symbolize_names => true)
+    data = JSON.parse(request.body.read)
     inbound_body = BandwidthCallbackMessage.new.build_from_hash(data[0])
     puts inbound_body.description
     if inbound_body.type == "message-received"
