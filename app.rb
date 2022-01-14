@@ -3,12 +3,12 @@ require 'openapi_ruby_sdk_new' # replace with new gem name************
 
 include RubySdk # replace with new module name**************
 
-BW_NUMBER = ENV.fetch("BW_NUMBER")
-LOCAL_PORT = ENV.fetch("LOCAL_PORT")
+BW_ACCOUNT_ID = ENV.fetch("BW_ACCOUNT_ID")
 BW_USERNAME = ENV.fetch("BW_USERNAME")
 BW_PASSWORD = ENV.fetch("BW_PASSWORD")
-BW_ACCOUNT_ID = ENV.fetch("BW_ACCOUNT_ID")
+BW_NUMBER = ENV.fetch("BW_NUMBER")
 BW_MESSAGING_APPLICATION_ID = ENV.fetch("BW_MESSAGING_APPLICATION_ID")
+LOCAL_PORT = ENV.fetch("LOCAL_PORT")
 
 set :port, LOCAL_PORT
 
