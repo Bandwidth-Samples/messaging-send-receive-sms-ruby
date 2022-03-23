@@ -76,4 +76,4 @@ After you have downloaded and installed `ngrok` run the following command to ope
 ngrok http $LOCAL_PORT
 ```
 
-You can view your public URL at `http://127.0.0.1:{LOCAL_PORT}` after ngrok is running.  You can also view the status of the tunnel and requests/responses here.
+You can view your public URL at `http://127.0.0.1:4040` after ngrok is running.  You can also view the status of the tunnel and requests/responses here.
