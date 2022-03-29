@@ -40,6 +40,12 @@ For more information about API credentials see our [Account Credentials](https:/
 
 # Running the Application
 
+To install the required packages for this app, run the command:
+
+```sh
+bundle install
+```
+
 Use the following command to run the application:
 
 ```sh
