@@ -42,6 +42,7 @@ end
 post '/callbacks/inbound/messaging' do # This URL handles inbound message callbacks.
   data = JSON.parse(request.body.read)
   inbound_body = Bandwidth::InboundMessageCallback.build_from_hash(data[0])
+  p inbound_body.description
   if inbound_body.type == 'message-received'
     puts "To: #{inbound_body.message.to[0]}\nFrom: #{inbound_body.message.from}\nText: #{inbound_body.message.text}"
   else
