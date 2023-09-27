@@ -21,8 +21,8 @@ post '/sendMessage' do # Make a POST request to this URL to send a text message.
   body.application_id = BW_MESSAGING_APPLICATION_ID
   body.from = BW_NUMBER
 
-  api_instance_msg = Bandwidth::MessagesApi.new
-  api_instance_msg.create_message(BW_ACCOUNT_ID, body)
+  messaging_api_instance = Bandwidth::MessagesApi.new
+  messaging_api_instance.create_message(BW_ACCOUNT_ID, body)
 end
 
 post '/callbacks/outbound/messaging/status' do # This URL handles outbound message status callbacks.
