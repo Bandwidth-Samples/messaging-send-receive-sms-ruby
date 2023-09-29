@@ -17,9 +17,13 @@ end
 
 post '/sendMessage' do # Make a POST request to this URL to send a text message.
   data = JSON.parse(request.body.read)
-  body = Bandwidth::MessageRequest.new(data)
-  body.application_id = BW_MESSAGING_APPLICATION_ID
-  body.from = BW_NUMBER
+  body = Bandwidth::MessageRequest.new(
+    {
+      from: BW_NUMBER,
+      application_id: BW_MESSAGING_APPLICATION_ID,
+      **data
+    }
+  )
 
   messaging_api_instance = Bandwidth::MessagesApi.new
   messaging_api_instance.create_message(BW_ACCOUNT_ID, body)
