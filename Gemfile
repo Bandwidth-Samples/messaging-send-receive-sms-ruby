@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'bandwidth-sdk'
+gem 'bandwidth-sdk', '11.0.0'
+gem 'sinatra', '3.1.0'
